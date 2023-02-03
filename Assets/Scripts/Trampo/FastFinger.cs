@@ -48,7 +48,6 @@ public class FastFinger : MonoBehaviour
 
     private void End()
     {
-        GameManager.Instance.QuitApplication();
     }
 
     private IEnumerator TimerCoroutine()
