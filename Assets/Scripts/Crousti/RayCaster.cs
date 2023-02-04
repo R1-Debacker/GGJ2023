@@ -57,6 +57,7 @@ public class RayCaster : MonoBehaviour
                     }
                     else if (doc.PopUp.Malicious && Input.GetKeyDown(KeyCode.Mouse1))
                     {
+                        _score++;
                         Destroy(result.gameObject);
                     }
                     player.ScoreText.text = "score : " + _score.ToString();

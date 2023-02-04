@@ -53,6 +53,7 @@ public class GameWindow : MonoBehaviour
             rect.sizeDelta = sizeDelta;
             rect.anchoredPosition = anchoredPosition;
             isStretched = false;
+            gameObject.layer = LayerMask.NameToLayer("Window");
             big.SetActive(true);
             small.SetActive(false);
         }
@@ -64,6 +65,7 @@ public class GameWindow : MonoBehaviour
             rect.offsetMin = Vector2.zero;
             rect.localScale = new Vector3(1, 1, 1);
             isStretched = true;
+            gameObject.layer = LayerMask.NameToLayer("UI");
             big.SetActive(false);
             small.SetActive(true);
         }
