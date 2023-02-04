@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector2 hotSpot;
     [SerializeField] private GameObject prefabDoc;
     
-    private int _score = 0;
     private Canvas _canvas;
     private  CursorMode _cursorMode = CursorMode.Auto;
 
@@ -77,8 +76,6 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
         }
 
-       
-        Debug.Log(_score);
 
     }
 }

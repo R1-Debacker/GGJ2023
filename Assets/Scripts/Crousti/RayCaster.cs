@@ -9,6 +9,8 @@ public class RayCaster : MonoBehaviour
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
+    private int _score = 0;
+
 
     void Start()
     {
@@ -21,7 +23,7 @@ public class RayCaster : MonoBehaviour
     void Update()
     {
         //Check if the left Mouse button is clicked
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1))
         {
             //Set up the new Pointer Event
             m_PointerEventData = new PointerEventData(m_EventSystem);
@@ -37,7 +39,29 @@ public class RayCaster : MonoBehaviour
             //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
             foreach (RaycastResult result in results)
             {
-                Debug.Log("Hit " + result.gameObject.name + result.gameObject.GetType());
+                if (result.gameObject.CompareTag("Red") && Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    _score = _score == 0 ? 0 : _score - 1;
+                    Destroy(result.gameObject);
+                    break;
+                }
+                else if (result.gameObject.CompareTag("Blue") && Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    _score++;
+                    Destroy(result.gameObject);
+                    break;
+                }
+                else if (result.gameObject.CompareTag("Blue") && Input.GetKeyDown(KeyCode.Mouse1))
+                {
+                    _score = _score == 0 ? 0 : _score - 1;
+                    Destroy(result.gameObject);
+                    break;
+                }
+                else if (result.gameObject.CompareTag("Red") && Input.GetKeyDown(KeyCode.Mouse1))
+                {
+                    Destroy(result.gameObject);
+                    break;
+                }
             }
         }
     }

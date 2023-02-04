@@ -43,14 +43,5 @@ public class PrefabDocScript : MonoBehaviour
         
     }
 
-    public bool ClickedLeft()
-    {
-        Destroy(gameObject,0.1f);
-        return CompareTag("Blue");
-    }
-    public bool ClickedRight()
-    {
-        Destroy(gameObject,0.1f);
-        return CompareTag("Red");
-    }
+    
 }
