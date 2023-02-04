@@ -871,13 +871,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
+  activeScene: {fileID: 0}
   loadingScene: {fileID: 0}
   onStart:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   onQuit:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
 --- !u!4 &821933892
 Transform:
   m_ObjectHideFlags: 0
@@ -951,16 +954,16 @@ MonoBehaviour:
   inputField: {fileID: 932978793}
   textToType: {fileID: 468211430}
   possibleTexts:
-  - Test
-  - AAAA
-  - aaaa
-  - azerty
-  - cooool
-  - roots
-  - racines
-  - "Ne pas \xE9crire"
-  - Oupsss11
-  - Bizarre
+  - parents.txt
+  - recherche.exe
+  - sensible.mp3
+  - secret.zip
+  - recensement.xml
+  - racines.png
+  - perso.csv
+  - backtrace.mov
+  - confidentiel.jpeg
+  - indice.mp4
 --- !u!114 &932978793
 MonoBehaviour:
   m_ObjectHideFlags: 0
