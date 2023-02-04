@@ -15,7 +15,8 @@ public class FastFinger : MonoBehaviour
 
     private void Start()
     {
-       StartTimer();
+        textToType.text = possibleTexts[Random.Range(0, possibleTexts.Count)];
+        StartTimer();
     }
 
     public void StartTimer()
@@ -38,10 +39,6 @@ public class FastFinger : MonoBehaviour
                 textToType.text = possibleTexts[Random.Range(0, possibleTexts.Count)];
                 inputField.text = "";
             }
-        }
-        else
-        {
-            //inputField.text = "";
         }
         scoreText.text = "Score : " + score;
     }
