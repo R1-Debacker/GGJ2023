@@ -90,5 +90,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rect: {fileID: 5907567112291663002}
-  lifetime: 0
+  lifetime: 4
   image: {fileID: 4860756976708590639}

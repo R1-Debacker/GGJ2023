@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
-        hotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
+        hotSpot = new Vector2(cursorTexture.width / 2, 0);
         Cursor.SetCursor(cursorTexture, hotSpot, _cursorMode);
         _canvas = GetComponentInParent<Canvas>();
         
