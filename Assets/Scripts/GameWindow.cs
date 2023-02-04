@@ -10,7 +10,6 @@ public class GameWindow : MonoBehaviour
 
     private bool isStretched = false;
     private RectTransform rect = null;
-    [SerializeField] private RectTransform canvasParent = null;
     private Vector2 sizeDelta = Vector2.zero;
     private Vector2 anchoredPosition = Vector2.zero;
     private Vector2 anchorMin = Vector2.zero;
