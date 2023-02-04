@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText = null;
 
     private bool isPlaying = false;
-    private CursorMode _cursorMode = CursorMode.Auto;
+    //private CursorMode _cursorMode = CursorMode.Auto;
 
     public float maxSpeed = 15.0f;
     public float minSpeed = 3.0f;
