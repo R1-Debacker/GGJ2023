@@ -30,6 +30,18 @@ public class GameWindow : MonoBehaviour
         offsetMin = rect.offsetMin;
     }
 
+    public void ShowWindow()
+    {
+        if (gameObject.activeSelf)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+    }
+
     public void Stretch()
     {
         if (isStretched)
