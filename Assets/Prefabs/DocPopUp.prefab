@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 8503118623068226968}
   - component: {fileID: 8503118623068226971}
   - component: {fileID: 2199773285862651957}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: DocPopUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 8503118623749350214}
   - component: {fileID: 8503118623749350216}
   - component: {fileID: 8503118623749350215}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}

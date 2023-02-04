@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class Puzzle : MonoBehaviour
 {
-    [SerializeField] private GameObject end = null;
     [SerializeField] private PuzzleImage[] pieces = null;
-    [SerializeField] private TextMeshProUGUI timerText = null;
 
 
     private Dictionary<Vector2, PuzzleImage> places = new Dictionary<Vector2, PuzzleImage>();
@@ -20,7 +18,6 @@ public class Puzzle : MonoBehaviour
 
     public void StartPuzzle()
     {
-        StartCoroutine(TimerCoroutine());
         SetPlaces();
     }
 
@@ -50,26 +47,16 @@ public class Puzzle : MonoBehaviour
                 return false;
             }
         }
-        end.SetActive(true);
+        End();
         return true;
     }
 
     private void End()
     {
-    }
-
-    private IEnumerator TimerCoroutine()
-    {
-        float timer = 90f;
-        float elapsedTime = 0f;
-        while (elapsedTime < timer)
+        foreach (PuzzleImage image in pieces)
         {
-            elapsedTime += Time.deltaTime;
-            timerText.text = "Temps restant : " + (timer - elapsedTime).ToString("F0") + "s";
-            yield return new WaitForEndOfFrame();
+            image.gameObject.layer = LayerMask.NameToLayer("UI");
         }
-        End();
-        yield break;
     }
 
 }

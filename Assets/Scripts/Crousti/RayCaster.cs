@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class RayCaster : MonoBehaviour
 {
     [SerializeField] private GraphicRaycaster raycaster;
+    [SerializeField] private Player player = null;
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
     private int _score = 0;
-
 
     void Start()
     {
@@ -44,25 +44,23 @@ public class RayCaster : MonoBehaviour
                     {
                         _score = _score == 0 ? 0 : _score - 1;
                         Destroy(result.gameObject);
-                        break;
                     }
                     else if (!doc.PopUp.Malicious && Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         _score++;
                         Destroy(result.gameObject);
-                        break;
                     }
                     else if (!doc.PopUp.Malicious && Input.GetKeyDown(KeyCode.Mouse1))
                     {
                         _score = _score == 0 ? 0 : _score - 1;
                         Destroy(result.gameObject);
-                        break;
                     }
                     else if (doc.PopUp.Malicious && Input.GetKeyDown(KeyCode.Mouse1))
                     {
                         Destroy(result.gameObject);
-                        break;
                     }
+                    player.ScoreText.text = "score : " + _score.ToString();
+                    break;
                 }
                 
             }

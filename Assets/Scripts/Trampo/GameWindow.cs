@@ -17,6 +17,8 @@ public class GameWindow : MonoBehaviour
     private Vector2 offsetMax = Vector2.zero;
     private Vector2 offsetMin = Vector2.zero;
 
+    public bool IsStretched { get => isStretched; set => isStretched = value; }
+
     private void Awake()
     {
         rect = GetComponent<RectTransform>();

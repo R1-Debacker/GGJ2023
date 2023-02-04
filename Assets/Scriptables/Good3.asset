@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Good3
   m_EditorClassIdentifier: 
   Malicious: 0
-  Name: Confidentiem
+  Name: Confidentiel
   Content: {fileID: 21300000, guid: 9b82a519e39092345b29e200159ad56e, type: 3}

@@ -40,6 +40,7 @@ public class FastFinger : MonoBehaviour
 
     private void End()
     {
+        inputField.interactable = false;
     }
 
     private IEnumerator TimerCoroutine()
