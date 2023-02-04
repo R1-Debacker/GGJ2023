@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class RayCaster : MonoBehaviour
 {
-    GraphicRaycaster m_Raycaster;
+    [SerializeField] private GraphicRaycaster raycaster;
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
     private int _score = 0;
@@ -14,10 +14,8 @@ public class RayCaster : MonoBehaviour
 
     void Start()
     {
-        //Fetch the Raycaster from the GameObject (the Canvas)
-        m_Raycaster = GetComponent<GraphicRaycaster>();
         //Fetch the Event System from the Scene
-        m_EventSystem = GetComponent<EventSystem>();
+        m_EventSystem = raycaster.GetComponent<EventSystem>();
     }
 
     void Update()
@@ -34,34 +32,39 @@ public class RayCaster : MonoBehaviour
             List<RaycastResult> results = new List<RaycastResult>();
 
             //Raycast using the Graphics Raycaster and mouse click position
-            m_Raycaster.Raycast(m_PointerEventData, results);
+            raycaster.Raycast(m_PointerEventData, results);
 
             //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
             foreach (RaycastResult result in results)
             {
-                if (result.gameObject.CompareTag("Red") && Input.GetKeyDown(KeyCode.Mouse0))
+                PrefabDocScript doc = result.gameObject.GetComponent<PrefabDocScript>();
+                if (doc)
                 {
-                    _score = _score == 0 ? 0 : _score - 1;
-                    Destroy(result.gameObject);
-                    break;
+                    if (doc.PopUp.Malicious && Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        _score = _score == 0 ? 0 : _score - 1;
+                        Destroy(result.gameObject);
+                        break;
+                    }
+                    else if (!doc.PopUp.Malicious && Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        _score++;
+                        Destroy(result.gameObject);
+                        break;
+                    }
+                    else if (!doc.PopUp.Malicious && Input.GetKeyDown(KeyCode.Mouse1))
+                    {
+                        _score = _score == 0 ? 0 : _score - 1;
+                        Destroy(result.gameObject);
+                        break;
+                    }
+                    else if (doc.PopUp.Malicious && Input.GetKeyDown(KeyCode.Mouse1))
+                    {
+                        Destroy(result.gameObject);
+                        break;
+                    }
                 }
-                else if (result.gameObject.CompareTag("Blue") && Input.GetKeyDown(KeyCode.Mouse0))
-                {
-                    _score++;
-                    Destroy(result.gameObject);
-                    break;
-                }
-                else if (result.gameObject.CompareTag("Blue") && Input.GetKeyDown(KeyCode.Mouse1))
-                {
-                    _score = _score == 0 ? 0 : _score - 1;
-                    Destroy(result.gameObject);
-                    break;
-                }
-                else if (result.gameObject.CompareTag("Red") && Input.GetKeyDown(KeyCode.Mouse1))
-                {
-                    Destroy(result.gameObject);
-                    break;
-                }
+                
             }
         }
     }
