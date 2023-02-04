@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class FastFinger : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class FastFinger : MonoBehaviour
     [SerializeField] private TMP_InputField inputField = null;
     [SerializeField] private TextMeshProUGUI textToType = null;
     [SerializeField] private List<string> possibleTexts = null;
+
+    [SerializeField] private int minScore = 5;
+    [SerializeField] private GameObject retryButton = null;
+
+    public UnityEvent OnGameEnded = null;
 
     private int score = 0;
 
@@ -41,6 +47,21 @@ public class FastFinger : MonoBehaviour
     private void End()
     {
         inputField.interactable = false;
+        if (score >= minScore)
+        {
+            OnGameEnded?.Invoke();
+        }
+        else
+        {
+            retryButton.SetActive(true);
+        }
+    }
+
+    public void Retry()
+    {
+        score = 0;
+        scoreText.text = "Score : " + score;
+        StartFastFinger();
     }
 
     private IEnumerator TimerCoroutine()

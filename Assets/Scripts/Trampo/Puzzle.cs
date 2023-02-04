@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Puzzle : MonoBehaviour
@@ -12,6 +13,8 @@ public class Puzzle : MonoBehaviour
     private Dictionary<Vector2, PuzzleImage> places = new Dictionary<Vector2, PuzzleImage>();
     private Vector2[] positions = new Vector2[16];
 
+    public UnityEvent OnGameEnded = null;
+
     private const float spacing = 100f;
 
     public Vector2[] Positions { get => positions; set => positions = value; }
@@ -19,6 +22,15 @@ public class Puzzle : MonoBehaviour
     public void StartPuzzle()
     {
         SetPlaces();
+        
+    }
+
+    public void FinishPuzzle()
+    {
+        for (int i = 0; i < pieces.Length; i++)
+        {
+            pieces[i].GetComponent<RectTransform>().anchoredPosition = Positions[i];
+        }
     }
 
     private void SetPlaces()
@@ -57,6 +69,7 @@ public class Puzzle : MonoBehaviour
         {
             image.gameObject.layer = LayerMask.NameToLayer("UI");
         }
+        OnGameEnded?.Invoke();
     }
 
 }

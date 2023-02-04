@@ -12,6 +12,8 @@ public class RayCaster : MonoBehaviour
     EventSystem m_EventSystem;
     private int _score = 0;
 
+    public int Score { get => _score; set => _score = value; }
+
     void Start()
     {
         //Fetch the Event System from the Scene
@@ -60,7 +62,7 @@ public class RayCaster : MonoBehaviour
                         _score++;
                         Destroy(result.gameObject);
                     }
-                    player.ScoreText.text = "score : " + _score.ToString();
+                    player.ScoreText.text = _score.ToString();
                     break;
                 }
                 

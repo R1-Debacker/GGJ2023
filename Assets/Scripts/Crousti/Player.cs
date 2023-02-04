@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Texture2D cursorTexture;
-    private Vector2 hotSpot;
+    
     [SerializeField] private GameObject prefabDoc;
     [SerializeField] private RectTransform background;
     [SerializeField] private Transform parentPanel = null;
@@ -18,20 +18,17 @@ public class Player : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText = null;
     [SerializeField] private TextMeshProUGUI scoreText = null;
 
+    [SerializeField] private int minScore = 5;
+    [SerializeField] private GameObject retryButton = null;
+
+    public UnityEvent OnGameEnded = null;
+
     private bool isPlaying = false;
-    //private CursorMode _cursorMode = CursorMode.Auto;
 
     public float maxSpeed = 15.0f;
     public float minSpeed = 3.0f;
 
     public TextMeshProUGUI ScoreText { get => scoreText; set => scoreText = value; }
-
-    public void Awake()
-    {
-        //hotSpot = new Vector2(cursorTexture.width / 2, 0);
-        //Cursor.SetCursor(cursorTexture, hotSpot, _cursorMode);
-        
-    }
 
     public void StartAim()
     {
@@ -61,8 +58,26 @@ public class Player : MonoBehaviour
 
     private void End()
     {
+        int.TryParse(scoreText.text, out int score);
+        if (score >= minScore)
+        {
+            OnGameEnded?.Invoke();
+        }
+        else
+        {
+            retryButton.SetActive(true);
+        }
         isPlaying=false;
     }
+
+    public void Retry()
+    {
+        scoreText.text = "0";
+        window.GetComponent<RayCaster>().Score = 0;
+        StartAim();
+    }
+
+
 
     private IEnumerator TimerCoroutine()
     {
@@ -76,32 +91,5 @@ public class Player : MonoBehaviour
         }
         End();
         yield break;
-    }
-
-    private void Update()
-    {
-        
-        //if (Input.mousePosition.x < 0)
-        //{
-        //    Cursor.lockState = CursorLockMode.None;
-        //    Cursor.lockState = CursorLockMode.Confined;
-        //}
-        //if (Input.mousePosition.x > Screen.width)
-        //{
-        //    Cursor.lockState = CursorLockMode.None;
-        //    Cursor.lockState = CursorLockMode.Confined;
-        //}
-        //if (Input.mousePosition.y < 0)
-        //{
-        //    Cursor.lockState = CursorLockMode.None;
-        //    Cursor.lockState = CursorLockMode.Confined;
-        //}
-        //if (Input.mousePosition.y > Screen.height)
-        //{
-        //    Cursor.lockState = CursorLockMode.None;
-        //    Cursor.lockState = CursorLockMode.Confined;
-        //}
-
-
     }
 }
