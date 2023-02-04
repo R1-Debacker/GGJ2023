@@ -13,8 +13,10 @@ public class CheckTrous : MonoBehaviour
     [SerializeField] private TMP_InputField indice3;
     [SerializeField] private TMP_InputField indice4;
     [SerializeField] private TMP_InputField indice5;
-    
-    
+    [SerializeField] private GameWindow window;
+
+
+
     private TMP_InputField[] indices = new TMP_InputField[5];
     private string[] mots = new string[5];
 
@@ -35,6 +37,18 @@ public class CheckTrous : MonoBehaviour
         mots[2] = "Nancy";
         mots[3] = "Sylvanie";
         mots[4] = "ZAC";
+    }
+
+    private void Update()
+    {
+        if (window.IsStretched)
+        {
+            transform.localScale = new Vector2(1.4f, 1.4f);
+        }
+        else
+        {
+            transform.localScale = Vector2.one;
+        }
     }
 
     public void Check() 

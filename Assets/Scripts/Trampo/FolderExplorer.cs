@@ -21,9 +21,16 @@ public class FolderExplorer : MonoBehaviour
         int count = 0;
         foreach (Transform child in folderContent)
         {
-            if (child.GetComponent<FileExplorer>() && child.GetComponent<FileExplorer>().Revealed)
+            if (child.GetComponent<FileExplorer>())
             {
-                child.gameObject.SetActive(!isDropDown);
+                if (child.GetComponent<FileExplorer>().Revealed)
+                {
+                    child.gameObject.SetActive(!isDropDown);    
+                }
+                else
+                {
+                    child.gameObject.SetActive(false);
+                }
                 count++;
             }
         }
