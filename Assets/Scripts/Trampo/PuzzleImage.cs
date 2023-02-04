@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class PuzzleImage : MonoBehaviour
 {
     [SerializeField] private Puzzle puzzle = null;
+
+    private Image image = null;
     public void PlaceImage()
     {
         foreach (Vector2 position in puzzle.Positions)
@@ -20,5 +22,10 @@ public class PuzzleImage : MonoBehaviour
             }
         }
     }
-    
+
+    private void Awake()
+    {
+        image = GetComponent<Image>();
+    }
+
 }

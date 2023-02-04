@@ -14,6 +14,7 @@ namespace Crousti
 
         public void Validation()
         {
+            _motDePasse = inputField.text;
             if (_motDePasse == "racines" || _motDePasse == "Racines" || _motDePasse == "RACINES" || _motDePasse == "roots" || _motDePasse == "Roots" || _motDePasse == "ROOTS")
             {
                 textDisplay.text = "Mot de passe correct";
@@ -31,8 +32,6 @@ namespace Crousti
         {
             inputField.contentType = TMP_InputField.ContentType.Password;
             inputField.asteriskChar = '*';
-            _motDePasse = inputField.text;
-            
         }
         
         public void Update()

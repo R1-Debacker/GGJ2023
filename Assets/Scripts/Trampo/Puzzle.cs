@@ -18,16 +18,10 @@ public class Puzzle : MonoBehaviour
 
     public Vector2[] Positions { get => positions; set => positions = value; }
 
-    private void Start()
-    {
-        SetPlaces();
-        StartTimer();
-
-    }
-
-    public void StartTimer()
+    public void StartPuzzle()
     {
         StartCoroutine(TimerCoroutine());
+        SetPlaces();
     }
 
     private void SetPlaces()

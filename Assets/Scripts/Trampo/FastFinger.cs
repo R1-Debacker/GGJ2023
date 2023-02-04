@@ -13,14 +13,9 @@ public class FastFinger : MonoBehaviour
 
     private int score = 0;
 
-    private void Start()
+    public void StartFastFinger()
     {
         textToType.text = possibleTexts[Random.Range(0, possibleTexts.Count)];
-        StartTimer();
-    }
-
-    public void StartTimer()
-    {
         StartCoroutine(TimerCoroutine());
     }
 

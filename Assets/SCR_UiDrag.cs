@@ -10,9 +10,11 @@ public class SCR_UiDrag : MonoBehaviour
 {
     public GameObject ui_canvas;
     public LayerMask validLayers;
+    public LayerMask layersMask;
     GraphicRaycaster ui_raycaster;
     PointerEventData click_data;
     List<RaycastResult> click_results;
+
 
     [HideInInspector] public List<GameObject> Clicked_elements;
 
@@ -51,7 +53,7 @@ public class SCR_UiDrag : MonoBehaviour
         }
         else
         {
-            if (dragging) EndDrag();
+            if (dragging && Clicked_elements.Count > 0 && Clicked_elements[0].GetComponent<PuzzleImage>()) EndDrag();
             dragging = false;
         }
 
@@ -90,8 +92,13 @@ public class SCR_UiDrag : MonoBehaviour
         GameObject selectedObject = null;
         foreach (RaycastResult result in click_results)
         {
-            if (validLayers == (validLayers | (1 << result.gameObject.layer)))
+            
+            if (layersMask == (layersMask | (1 << result.gameObject.layer)))
             {
+                break;
+            }
+            if (validLayers == (validLayers | (1 << result.gameObject.layer)))
+                {
                 selectedObject = result.gameObject;
                 selectedObject.transform.SetAsLastSibling();
                 break;
