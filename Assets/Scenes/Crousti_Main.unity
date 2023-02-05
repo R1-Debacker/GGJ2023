@@ -1249,8 +1249,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 213.6541, y: -43.7005}
-  m_SizeDelta: {x: 62.8293, y: 14.2607}
+  m_AnchoredPosition: {x: 18.455109, y: -43.67517}
+  m_SizeDelta: {x: 44.5027, y: 18.5042}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &322432423
 MonoBehaviour:
@@ -3344,8 +3344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 248.1, y: -9.4681}
-  m_SizeDelta: {x: 78.3445, y: 13.645}
+  m_AnchoredPosition: {x: -142.8654, y: -27.1}
+  m_SizeDelta: {x: 49.107, y: 14.646}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &558616427
 MonoBehaviour:
@@ -4049,7 +4049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ...........
+  m_text: ........
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
   m_sharedMaterial: {fileID: 88098601657111721, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
@@ -4960,7 +4960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ................
+  m_text: ............
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
   m_sharedMaterial: {fileID: 88098601657111721, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
@@ -6720,6 +6720,11 @@ MonoBehaviour:
   - backtrace.mov
   - confidentiel.jpeg
   - indice.mp4
+  minScore: 5
+  retryButton: {fileID: 0}
+  OnGameEnded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &932978793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7125,7 +7130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ...................
+  m_text: ...........
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
   m_sharedMaterial: {fileID: 88098601657111721, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
@@ -7357,7 +7362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ...........
+  m_text: ........
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
   m_sharedMaterial: {fileID: 88098601657111721, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
@@ -7737,7 +7742,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: .........
+  m_text: .......
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
   m_sharedMaterial: {fileID: 88098601657111721, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
@@ -8007,8 +8012,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.04568, y: -61.08294}
-  m_SizeDelta: {x: 40.3716, y: 13.8265}
+  m_AnchoredPosition: {x: -105.929, y: -61.254932}
+  m_SizeDelta: {x: 27.7348, y: 18.0311}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1067350549
 MonoBehaviour:
@@ -8278,13 +8283,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742feec90e9535b47baf15f6cddbaeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 2800000, guid: eca585e801e45a74d9f213ca77dc5b05, type: 3}
   prefabDoc: {fileID: 8503118623068226966, guid: 80c2aa0966dc80a43affb3af5189f614, type: 3}
   background: {fileID: 217081356}
   parentPanel: {fileID: 217081356}
   window: {fileID: 838976896}
   timerText: {fileID: 930669074}
   scoreText: {fileID: 1990664807}
+  minScore: 5
+  retryButton: {fileID: 0}
+  OnGameEnded:
+    m_PersistentCalls:
+      m_Calls: []
   maxSpeed: 15
   minSpeed: 3
 --- !u!1 &1090080192
@@ -8964,8 +8973,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -123.7, y: -9.5}
-  m_SizeDelta: {x: 47.7572, y: 13.6448}
+  m_AnchoredPosition: {x: -70.3626, y: -9.3558}
+  m_SizeDelta: {x: 37.4135, y: 13.3564}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1207136427
 MonoBehaviour:
@@ -9314,15 +9323,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Communiqu\xE9 officiel du Sergent J.MacTavish\r\nA l\u2019intention exclusive
-    du Capitaine Price\r\n\r\nObjet : nettoyage des cibles 381 et 382\r\n\r\n\tLe
-    22 f\xE9vrier 1988 \xE0 21h56, les victimes Serge et Jeanne CHASE, dont le nom
-    de famille confirm\xE9 est            , ont \xE9t\xE9 abattues alors qu\u2019elles
-    d\xEEnaient place           \nleur lieu de rendez-vous pr\xE9f\xE9r\xE9, dans
-    la ville de              . Le conducteur du camion qui les a \xE9cras\xE9 a \xE9t\xE9
-    inculp\xE9 pour conduite en \xE9tat d\u2019ivresse. L\u2019arm\xE9e de               
-    n\u2019est donc pas suspect\xE9e, mais le s\xE9rum d\u2019acronyme          n\u2019a
-    toujours pas \xE9t\xE9 retrouv\xE9.\r\n\t\n\tMission accomplie.\r\n"
+  m_text: "Official Report from Sergeant J. MacTavish\r\nFor the exclusive read of
+    Captain Price\r\n\r\nRe: Wipeout of targets 381 and 382\r\n\r\n\tOn February
+    22, 1988, at 9:56 p.m., victims Serge and Jeanne CHASE, whose last name is confirmed
+    to be         , were shot and killed while dining at their favorite restaurant,
+    place             in the city of         . The driver of the truck that ran them
+    over has been charged with drunk driving. The            army is therefore not
+    suspected, but the serum (code name :       ) has still not been found.\r\n\t\r\n\tMission
+    accomplished.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
   m_sharedMaterial: {fileID: 88098601657111721, guid: d4d7dc60279daea44b329f6467cff3b5, type: 2}
@@ -9416,6 +9424,7 @@ MonoBehaviour:
   indice3: {fileID: 2047270025}
   indice4: {fileID: 322432423}
   indice5: {fileID: 1067350549}
+  window: {fileID: 1642725088}
   OnEnded:
     m_PersistentCalls:
       m_Calls: []
@@ -13941,8 +13950,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57.9, y: -26.6}
-  m_SizeDelta: {x: 47.7572, y: 13.6448}
+  m_AnchoredPosition: {x: -17.241516, y: -27.1}
+  m_SizeDelta: {x: 34.4821, y: 14.646}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047270025
 MonoBehaviour:
@@ -14214,6 +14223,9 @@ MonoBehaviour:
   - {fileID: 1772879348}
   - {fileID: 1003402225}
   - {fileID: 4768292}
+  OnGameEnded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2055091440
 MonoBehaviour:
   m_ObjectHideFlags: 0
