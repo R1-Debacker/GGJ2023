@@ -41,14 +41,14 @@ public class CheckTrous : MonoBehaviour
 
     private void Update()
     {
-        if (window.IsStretched)
-        {
-            transform.localScale = new Vector2(1.4f, 1.4f);
-        }
-        else
-        {
-            transform.localScale = Vector2.one;
-        }
+        //if (window.IsStretched)
+        //{
+        //    transform.localScale = new Vector2(1.4f, 1.4f);
+        //}
+        //else
+        //{
+        //    transform.localScale = Vector2.one;
+        //}
     }
 
     public void Check() 

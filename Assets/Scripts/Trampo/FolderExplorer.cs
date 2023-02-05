@@ -27,12 +27,12 @@ public class FolderExplorer : MonoBehaviour
                 if (child.GetComponent<FileExplorer>().Revealed)
                 {
                     child.gameObject.SetActive(!isDropDown);    
+                    count++;
                 }
                 else
                 {
                     child.gameObject.SetActive(false);
                 }
-                count++;
             }
         }
         isDropDown = !isDropDown;
