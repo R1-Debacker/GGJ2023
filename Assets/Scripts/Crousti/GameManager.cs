@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    private void Awake()
+    private void OnApplicationFocus(bool focus)
     {
-        hotSpot = new Vector2(cursorTexture.width / 2, 0);
-        Cursor.SetCursor(cursorTexture, hotSpot, _cursorMode);
+        if (focus)
+        {
+            hotSpot = new Vector2(cursorTexture.width / 2, 0);
+            Cursor.SetCursor(cursorTexture, hotSpot, _cursorMode);
+        }
     }
 
     // Start is called before the first frame update
