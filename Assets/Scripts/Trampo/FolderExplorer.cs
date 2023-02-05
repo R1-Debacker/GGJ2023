@@ -18,6 +18,7 @@ public class FolderExplorer : MonoBehaviour
 
     public void ShowFolderContent()
     {
+         CleanContent();
         int count = 0;
         foreach (Transform child in folderContent)
         {
@@ -45,5 +46,13 @@ public class FolderExplorer : MonoBehaviour
             newHeight = height;
         }
         rect.sizeDelta = new Vector2(rect.rect.width, newHeight);
+    }
+
+    private void CleanContent()
+    {
+        foreach (Transform child in folderContent)
+        {
+            child?.gameObject.SetActive(false);
+        }
     }
 }

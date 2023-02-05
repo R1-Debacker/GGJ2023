@@ -8,6 +8,7 @@ public class FileExplorer : MonoBehaviour, IPointerClickHandler
 
     
     [SerializeField] private GameObject content = null;
+    [SerializeField] private Transform contentParent = null;
     [SerializeField] private bool canInspect = false;
     [SerializeField] private GameObject inspectButton = null;
     private bool isShowed = false;
@@ -26,15 +27,16 @@ public class FileExplorer : MonoBehaviour, IPointerClickHandler
 
     public void ShowFileContent()
     {
-        if (!isShowed)
+        ClearContent();
+        content.SetActive(true);
+        content.transform.SetAsLastSibling();
+    }
+
+    private void ClearContent()
+    {
+        foreach (Transform child in contentParent)
         {
-            content.SetActive(true);
-            content.transform.SetAsLastSibling();
+            child.gameObject.SetActive(false);
         }
-        else
-        {
-            content.SetActive(false);
-        }
-        isShowed = !isShowed;
     }
 }

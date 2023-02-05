@@ -62,6 +62,7 @@ public class AffichageCommandes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().Play();
         StartCoroutine(Cooldown());
     }
 
@@ -91,6 +92,10 @@ public class AffichageCommandes : MonoBehaviour
             
 
             StartCoroutine(PauseBetweenChars(letter));
+        }
+        else
+        {
+            GetComponent<AudioSource>().Stop();
         }
     }
 
