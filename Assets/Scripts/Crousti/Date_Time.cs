@@ -11,7 +11,9 @@ public class Date_Time : MonoBehaviour
     
     public void Start()
     {
-        date.text = System.DateTime.Now.ToString("dddd dd MMMM yyyy");
-        hour.text = System.DateTime.Now.ToString("HH:mm");
+        var culture = new System.Globalization.CultureInfo("en-US");
+        date.text = System.DateTime.Now.ToString("dddd, MMMM dd",culture);
+        hour.text = System.DateTime.Now.ToString("HH:mm",culture);
+        
     }
 }
