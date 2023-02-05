@@ -18,7 +18,7 @@ public class CheckTrous : MonoBehaviour
 
 
     private TMP_InputField[] indices = new TMP_InputField[5];
-    private string[] mots = new string[5];
+    private List<List<string>> mots = new List<List<string>>();
 
     public UnityEvent OnEnded = null;
     
@@ -31,12 +31,31 @@ public class CheckTrous : MonoBehaviour
         indices[2] = indice3;
         indices[3] = indice4;
         indices[4] = indice5;
+
+        List<string> strings1 = new List<string>();
+        strings1.Add("Clavel");
+        mots.Add(strings1);
         
-        mots[0] = "Clavel";
-        mots[1] = "Stanislas";
-        mots[2] = "Nancy";
-        mots[3] = "Lituanie";
-        mots[4] = "ZAC";
+        List<string> strings2 = new List<string>();
+        strings2.Add("Stanislas");
+        mots.Add(strings2);
+        
+        List<string> strings3 = new List<string>();
+        strings3.Add("Nancy");
+        mots.Add(strings3);
+        
+        List<string> strings4 = new List<string>();
+        strings4.Add("Lithuanian");
+        strings4.Add("lithuanian");
+        mots.Add(strings4);
+        
+        List<string> strings5 = new List<string>();
+        strings5.Add("ZAC");
+        strings5.Add("Zac");
+        strings5.Add("zac");
+        strings5.Add("Z.A.C");
+        mots.Add(strings5);
+        
     }
 
     private void Update()
@@ -51,26 +70,26 @@ public class CheckTrous : MonoBehaviour
         //}
     }
 
-    public void Check() 
+    public void Check()
     {
-        
+        bool isEnded = true;
         for (int i = 0; i < indices.Length; i++)
         {
-            if (indices[i].text == mots[i])
+            if (mots[i].Contains(indices[i].text))
             {
                 indices[i].textComponent.fontStyle = FontStyles.Bold;
                 indices[i].interactable = false;
             }
             else
             {
+                isEnded = false;
                 if (!string.IsNullOrEmpty(indices[i].text))
                 {
-                    indices[i].text = indices[i].placeholder.GetComponent<TextMeshProUGUI>().text;
+                    indices[i].text = string.Empty;
                 }
-                return;
-
+                
             }
         }
-        OnEnded.Invoke();
-    }
+        if (isEnded) OnEnded.Invoke();
+    } 
 }
