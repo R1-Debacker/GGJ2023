@@ -11,7 +11,7 @@ public class FileExplorer : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Transform contentParent = null;
     [SerializeField] private bool canInspect = false;
     [SerializeField] private GameObject inspectButton = null;
-    private bool isShowed = false;
+    //private bool isShowed = false;
 
     [SerializeField] private bool revealed = true;
 

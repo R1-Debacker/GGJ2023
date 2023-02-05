@@ -35,7 +35,7 @@ public class CheckTrous : MonoBehaviour
         mots[0] = "Clavel";
         mots[1] = "Stanislas";
         mots[2] = "Nancy";
-        mots[3] = "Sylvanie";
+        mots[3] = "Lituanie";
         mots[4] = "ZAC";
     }
 
